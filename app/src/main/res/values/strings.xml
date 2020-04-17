@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Random03302020</string>
+    <string name="game_name">GAME LOTO</string>
+    <string name="hint_min">Nhập số bắt đầu</string>
+    <string name="hint_max">Nhập số kết thúc</string>
+    <string name="btn_random">Random</string>
+</resources>
