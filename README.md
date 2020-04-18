@@ -3,7 +3,7 @@ Bài tập Random số
 
 Đây là demo mình làm app RandomNumber bài tập của lớp Android Khoa Phạm. 
 
-![image](https://media.giphy.com/media/jpJXgVIRWI3THec8A1/giphy.gif)
+![image](https://media.giphy.com/media/YP2oyXHp277HnyD5ii/giphy.gif)
 
 ### How to download / clone it
 
@@ -27,4 +27,4 @@ Các bạn có thể download (clone) về bằng 2 cách:
 
 ### Tổng kết
 
-Đây chỉ là demo, mình chưa biết cách ấn nút để generate ra số. Code chuẩn sẽ được thầy dạy, nếu ai dò bài thì xem của mình nha.
+Đây chỉ cách làm của mình, mình sẽ cố gắng hoàn thiện code hơn.

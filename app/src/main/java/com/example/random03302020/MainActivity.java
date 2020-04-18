@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,10 +14,12 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout mLinearLayout;
+
     EditText mEditTextMin, mEditTextMax;
     Button mRandomButton;
     TextView mResultTextView;
+    String mProcess;
+    long mButtonClickCount;
     String mMinInputValue;
     String mMaxInputValue;
     int mMinValue;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mLinearLayout = findViewById(R.id.linearLayout);
+
         mEditTextMin =  findViewById(R.id.editTextMin);
         mEditTextMax =  findViewById(R.id.editTextMax);
         mRandomButton =  findViewById(R.id.btn_random);
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                mButtonClickCount++;
                 mMinInputValue = mEditTextMin.getText().toString();
                 mMaxInputValue = mEditTextMax.getText().toString();
                 if ((mMinInputValue.isEmpty()) || (mMaxInputValue.isEmpty())) {
@@ -49,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 mMinValue = Integer.parseInt(mMinInputValue);
                 mMaxValue = Integer.parseInt(mMaxInputValue);
+
+                if(mButtonClickCount > (mMaxValue - mMinValue + 1)){
+                    Toast.makeText(MainActivity.this, "Bạn đã nhấn đủ số lần", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if (mMinValue >= mMaxValue) {
                     mMaxValue = mMinValue + 1;
                     mEditTextMax.setText(mMaxValue + "");
@@ -56,7 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Random randomValue = new Random();
                 int resultValue = randomValue.nextInt(mMaxValue - mMinValue + 1) + mMinValue;
-                mResultTextView.setText(resultValue + " - ");
+                mProcess = mResultTextView.getText().toString();
+                mProcess = mProcess + resultValue + (" - ");
+                mResultTextView.setText(mProcess);
+
+
+
+
             }
         });
     }
