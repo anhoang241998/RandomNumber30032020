@@ -4,4 +4,6 @@
     <string name="hint_min">Nhập số bắt đầu</string>
     <string name="hint_max">Nhập số kết thúc</string>
     <string name="btn_random">Random</string>
+    <string name="btn_add">Thêm số</string>
+    <string name="btn_reset">Reset</string>
 </resources>
